@@ -55,17 +55,37 @@ class HomePage extends StatelessWidget {
           ),
           Expanded(child: Container()),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [buildBox(child: Text("En savoi plus")), Text("Suivant")],
+            children: [
+              Card(
+                margin: EdgeInsets.all(10),
+                elevation: 8,
+                child: Container(
+                  padding: EdgeInsets.all(25),
+                  child: Text(
+                    'En savoir plus',
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 2,
+              ),
+              Expanded(child: Container()),
+              Card(
+                margin: EdgeInsets.all(10),
+                elevation: 8,
+                child: Container(
+                  padding: EdgeInsets.all(25),
+                  child: Text(
+                    'Suivant',
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+            ],
           )
         ]),
       ),
     );
   }
-
-  Widget buildBox({required Widget child}) => Container(
-        height: 40,
-        decoration:
-            BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(30))),
-      );
 }
